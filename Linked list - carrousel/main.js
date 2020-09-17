@@ -7,6 +7,7 @@ class Picture {
   constructor(source, next = null) {
     this.source = source
     this.next = next
+    this.previous = this
   }
 }
 
@@ -30,29 +31,21 @@ carrousel.addPicture("https://www.planetware.com/wpimages/2020/02/france-in-pict
 carrousel.addPicture("https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg")
 carrousel.addPicture("https://ichef.bbci.co.uk/news/410/cpsprodpb/7FF7/production/_109195723_curtiswhiteside.jpg")
 
-// let current = carrousel.head.source
-// let next = carrousel.head.next.source
-
 let current = carrousel.head
 let next = carrousel.head.next
+let previous = carrousel.head.previous
 
 right.addEventListener("click", function() {
-  // currentPicture.src = current.source
-  current = next // || (or) instead of an if statement
-  if (!current) {
-    current = carrousel.head
-    
-  }
-  if (!next) {
-    next = carrousel.head.next
-  }
-
+  current = next || carrousel.head 
   currentPicture.src = current.source
-  next = next.next
-  console.log(current)
+  next = next.next || carrousel.head
 })
 
-console.log(carrousel.head.source)
+left.addEventListener("click", function() {
+  currentPicture.src = previous.source
+  console.log(previous.previous)
+})
+
 currentPicture.src = carrousel.head.source
 
 console.log(carrousel)
