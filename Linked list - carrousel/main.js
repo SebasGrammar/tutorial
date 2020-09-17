@@ -1,7 +1,11 @@
+import {test} from "./test.js"
+import {literal} from "./test.js"
+let {inner_test: f} = literal;
+
 let currentPicture = document.querySelector(".currentPicture")
 let [left, right] = document.querySelectorAll("button")
 
-
+console.log(f)
 
 class Picture {
   constructor(source, next = null) {
