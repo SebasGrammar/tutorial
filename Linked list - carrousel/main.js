@@ -26,8 +26,6 @@ class Carrousel {
   }
 }
 
-
-
 let carrousel = new Carrousel()
 
 carrousel.addPicture("https://media.istockphoto.com/photos/hands-forming-a-heart-shape-with-sunset-silhouette-picture-id636379014?k=6&m=636379014&s=612x612&w=0&h=tnYrf_O_nvT15N4mmjorIRvZ7lK4w1q1c7RSfrVmqKA=")
